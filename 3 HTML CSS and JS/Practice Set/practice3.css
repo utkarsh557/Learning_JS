@@ -1,0 +1,17 @@
+.btn{
+    color: red;
+    background-color: aqua;
+}
+#bag{
+    background-color: lightgreen;
+    width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+}
+#wish{
+    background-color: #ffffff;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+}
