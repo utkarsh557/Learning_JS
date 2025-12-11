@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // let product = {
+        //     company: 'Mango',
+        //     'item-name': 'T-Shirt',
+        //     price: 861
+        // }; 
+        // console.log(product);
+        // console.log(product.company);
+        // console.log(product.price);
+        // console.log(product.item_name);
+        // product.company = 'banana';
+        // console.log(product.company);
+
+        // console.log(product['company']);
+        // productName = 'item-name';
+        // console.log(product[productName]);
+
+        // delete product.company;
+        // delete product['company'];
+        // console.log(product);
+
+        // let product = {
+        //     company: 'Mango',
+        //     'item-name': 'T-Shirt',
+        //     price: 861,
+
+        //     displayPrice: function() {
+        //         console.log(`Price of the product is ₹${this.price}`)
+        //     }
+        // }; 
+        // product.displayPrice();
+
+
+        // let a = 5;
+        // let b = a;
+        // console.log(`a = ${a}, b = ${b}`);
+        // a = 8;
+        // console.log(`a = ${a}, b = ${b}`);
+
+        // let x = {num: 5};
+        // let y = x;
+        // console.log(`x = ${x.num}, y = ${y.num}`);
+        // x.num = 8;
+        // console.log(`x = ${x.num}, y = ${y.num}`);
+
+
+        let product = {
+            company: 'Mango',
+            'item-name': 'T-Shirt',
+            price: 861
+        }; 
+
+        let {company, price} = product;
+        console.log(company);
+        console.log(price);
+
+    </script>
+</body>
+</html>

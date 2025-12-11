@@ -33,6 +33,16 @@
     ">Stump</button>
 
     <script>
+        let score = {
+            win: 0,
+            lost: 0,
+            tie: 0,
+
+            displayResult() {
+                return `Win : ${score.win}, Lost : ${score.lost}, Tie : ${score.tie}`
+            }
+        };
+
         function generateComputerChoice(){
             // this will generate random number between 0 and 3
             let randomNumber = Math.random() * 3;
@@ -48,33 +58,46 @@
         function getResult(userMove, computerMove){
             if(userMove === 'bat'){
                 if (computerMove === 'ball'){
+                    score.win++;
                     return 'You Won!!';
                 } else if (computerMove === 'bat'){
+                    score.tie++;
                     return `it's a tie!!`;
                 } else if (computerMove === 'stump'){
+                    score.lost++;
                     return 'Computer Won!!';
                 }
             } else if(userMove === 'ball'){
                 if (computerMove === 'stump'){
+                    score.win++;
                     return 'You Won!!';
                 } else if (computerMove === 'ball'){
+                    score.tie++;
                     return `it's a tie!!`;
                 } else if(computerMove === 'bat'){
+                    score.lost++;
                     return 'Computer Won!!';
                 }
             } else{
                 if (computerMove === 'bat'){
+                    score.win++;
                     return 'You Won!!';
                 } else if (computerMove === 'stump'){
+                    score.tie++;
                     return `it's a tie!!`;
                 } else if(computerMove === 'ball') {
+                    score.lost++;
                     return 'Computer Won!!';
                 }
             }
         }
 
         function displayResult(userMove, computerMove, result){
-            alert(`You have chosen ${userMove}. Computer choice is ${computerMove}. and ${result}`);
+            alert(`You have chosen ${userMove}. Computer choice is ${computerMove}. 
+            
+            ${result}
+            
+            ${score.displayResult()}`);
         }
     </script>
 </body>
