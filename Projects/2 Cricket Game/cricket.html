@@ -4,101 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cricket Game</title>
-    <style>
-        body{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="cricket.css">
 </head>
 <body>
     <h1>Bat Ball Stump Game</h1>
-    <button onclick="
+    <button class="choice-button" onclick="
     let computerChoice = generateComputerChoice();
     let resultMsg = getResult('bat', computerChoice);
     displayResult('bat', computerChoice, resultMsg);
-    ">Bat</button>
+    ">
+        <img class="choice-image" src="images/bat.png" alt="bat Image">
+    </button>
 
     <!-- ball button -->
-    <button onclick="
+    <button class="choice-button" onclick="
     computerChoice = generateComputerChoice();
     resultMsg = getResult('ball', computerChoice);
     displayResult('ball', computerChoice, resultMsg);
-    ">Ball</button>
+    ">
+        <img class="choice-image" src="images/ball.png" alt="ball image">
+    </button>
 
     <!-- stump button -->
-    <button onclick="
+    <button class="choice-button" onclick="
     computerChoice = generateComputerChoice();
     resultMsg = getResult('stump', computerChoice);
     displayResult('stump', computerChoice, resultMsg);
-    ">Stump</button>
+    ">
+        <img class="choice-image" src="images/stump.png" alt="stump image">
+    </button>
 
-    <script>
-        let score = {
-            win: 0,
-            lost: 0,
-            tie: 0,
+    <!-- scores and moves -->
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
 
-            displayResult() {
-                return `Win : ${score.win}, Lost : ${score.lost}, Tie : ${score.tie}`
-            }
-        };
+    <!-- reset button -->
+    <button onclick="
+        localStorage.clear();
+        resetScore();
+    ">Reset</button>
 
-        function generateComputerChoice(){
-            // this will generate random number between 0 and 3
-            let randomNumber = Math.random() * 3;
-            if(randomNumber > 0 && randomNumber <= 1){
-                return 'bat';
-            } else if(randomNumber > 1 && randomNumber <= 2){
-                return 'ball';
-            } else{
-                return 'stump';
-            }
-        }
-
-        function getResult(userMove, computerMove){
-            if(userMove === 'bat'){
-                if (computerMove === 'ball'){
-                    score.win++;
-                    return 'You Won!!';
-                } else if (computerMove === 'bat'){
-                    score.tie++;
-                    return `it's a tie!!`;
-                } else if (computerMove === 'stump'){
-                    score.lost++;
-                    return 'Computer Won!!';
-                }
-            } else if(userMove === 'ball'){
-                if (computerMove === 'stump'){
-                    score.win++;
-                    return 'You Won!!';
-                } else if (computerMove === 'ball'){
-                    score.tie++;
-                    return `it's a tie!!`;
-                } else if(computerMove === 'bat'){
-                    score.lost++;
-                    return 'Computer Won!!';
-                }
-            } else{
-                if (computerMove === 'bat'){
-                    score.win++;
-                    return 'You Won!!';
-                } else if (computerMove === 'stump'){
-                    score.tie++;
-                    return `it's a tie!!`;
-                } else if(computerMove === 'ball') {
-                    score.lost++;
-                    return 'Computer Won!!';
-                }
-            }
-        }
-
-        function displayResult(userMove, computerMove, result){
-            alert(`You have chosen ${userMove}. Computer choice is ${computerMove}. 
-            
-            ${result}
-            
-            ${score.displayResult()}`);
-        }
-    </script>
+    <script src="cricket.js"></script>
 </body>
 </html>

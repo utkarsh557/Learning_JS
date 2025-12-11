@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="my-div">This is the div</div>
+
+    <script>
+        // console.log(document.location);
+        // console.log(document.title);
+        // console.log(document.domain);
+        // href
+        // innerHTML
+        // innerText
+        // classList
+
+        let button = document.createElement('Button');
+        button.innerText = 'Click Me';
+        document.querySelector('.my-div').appendChild(button);
+        document.querySelector('.my-div').removeChild(button);
+    </script>
+</body>
+</html>
